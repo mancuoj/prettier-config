@@ -4,7 +4,23 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-No semi, single quotes, trailing comma
+No semi, single quotes, trailing comma.
+
+## Usage
+
+```shell
+ni -D prettier @mancuoj/prettier-config
+```
+
+```json
+// package.json
+{
+  "scripts": {
+    "format": "prettier --cache --write ."
+  },
+  "prettier": "@mancuoj/prettier-config"
+}
+```
 
 ## License
 
