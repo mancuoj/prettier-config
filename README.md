@@ -6,11 +6,13 @@
 
 No semi, single quotes, trailing comma.
 
-## Usage
+## Install
 
 ```shell
 ni -D prettier @mancuoj/prettier-config
 ```
+
+## Usage
 
 In your `package.json`:
 
