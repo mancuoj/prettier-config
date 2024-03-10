@@ -12,8 +12,9 @@ No semi, single quotes, trailing comma.
 ni -D prettier @mancuoj/prettier-config
 ```
 
+In your `package.json`:
+
 ```json
-// package.json
 {
   "scripts": {
     "format": "prettier --cache --write ."
