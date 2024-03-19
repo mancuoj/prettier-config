@@ -1,6 +1,6 @@
 {
   "name": "@mancuoj/prettier-config",
-  "type": "module",
+  "type": "commonjs",
   "version": "0.0.2",
   "description": "No semi, single quotes, trailing comma",
   "author": "Mancuoj <mancuoj@gmail.com>",
