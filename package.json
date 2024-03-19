@@ -1,17 +1,19 @@
 {
   "name": "@mancuoj/prettier-config",
+  "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@8.15.5",
   "description": "No semi, single quotes, trailing comma",
   "author": "Mancuoj <mancuoj@gmail.com>",
   "license": "MIT",
   "repository": "mancuoj/prettier-config",
+  "keywords": [
+    "mancuoj",
+    "prettier",
+    "config"
+  ],
   "files": [
     "index.js"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "format": "prettier --cache --write .",
     "release": "bumpp && pnpm publish"
@@ -23,5 +25,8 @@
   "peerDependencies": {
     "prettier": "^3.2.5"
   },
-  "prettier": "./index.js"
+  "prettier": "./index.js",
+  "publishConfig": {
+    "access": "public"
+  }
 }

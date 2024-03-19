@@ -1,5 +1,5 @@
 /** @type {import('prettier').Options} */
-module.exports = {
+export default {
   semi: false,
   singleQuote: true,
   trailingComma: 'all',
@@ -12,9 +12,11 @@ module.exports = {
         '**/coverage/**',
         '**/temp/**',
         '**/.idea/**',
+        '**/.github/**',
         '**/.output/**',
         '**/LICENSE*',
         '**/__snapshots__',
+        '**/package-lock.json',
         '**/pnpm-lock.yaml',
       ],
       options: {
