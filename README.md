@@ -8,23 +8,10 @@
 
 No semi, single quotes, trailing comma.
 
-## Install
-
-```shell
-ni -D prettier @mancuoj/prettier-config
-```
-
 ## Usage
 
-In your `package.json`:
-
-```json
-{
-  "scripts": {
-    "format": "prettier --cache --write ."
-  },
-  "prettier": "@mancuoj/prettier-config"
-}
+```shell
+npx @mancuoj/prettier-config@latest
 ```
 
 ## License
