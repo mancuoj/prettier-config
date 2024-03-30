@@ -1,6 +1,6 @@
 {
   "name": "@mancuoj/prettier-config",
-  "type": "commonjs",
+  "type": "module",
   "version": "0.1.1",
   "description": "No semi, single quotes, trailing comma",
   "author": "Mancuoj <mancuoj@gmail.com>",
@@ -14,7 +14,7 @@
   "files": [
     "index.js"
   ],
-  "bin": "./cli.mjs",
+  "bin": "./cli.js",
   "scripts": {
     "format": "prettier --cache --write .",
     "release": "bumpp && pnpm publish"
