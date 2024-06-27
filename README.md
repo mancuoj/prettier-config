@@ -11,7 +11,7 @@ No semi, single quotes, trailing comma.
 ## Usage
 
 ```shell
-npx @mancuoj/prettier-config@latest
+npx @mancuoj/prettier-config
 ```
 
 ## License
