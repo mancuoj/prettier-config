@@ -31,6 +31,11 @@ async function main() {
       ...pkgJson.scripts,
       format: 'prettier --cache --write .',
     }
+    pkgJson.devDependencies = {
+      ...pkgJson.devDependencies,
+      prettier: pkgJson.devDependencies.prettier || 'latest',
+      '@mancuoj/prettier-config': pkgJson.devDependencies['@mancuoj/prettier-config'] || 'latest',
+    }
     pkgJson.prettier = '@mancuoj/prettier-config'
 
     await fsp.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
