@@ -1,6 +1,5 @@
 {
   "name": "@mancuoj/prettier-config",
-  "type": "module",
   "version": "0.3.0",
   "description": "No semi, single quotes, trailing comma",
   "author": "Mancuoj <mancuoj@gmail.com>",

@@ -12,7 +12,9 @@ function isPackageExists(pkg, pkgJson) {
 }
 
 async function ensurePackages(pkgJson) {
-  const missingPkgs = ['prettier', '@mancuoj/prettier-config'].filter((pkg) => !isPackageExists(pkg, pkgJson))
+  const missingPkgs = ['prettier', '@mancuoj/prettier-config'].filter(
+    (pkg) => !isPackageExists(pkg, pkgJson),
+  )
   if (missingPkgs.length > 0) {
     console.log(c.cyan(`Installing required packages: ${missingPkgs.join(', ')}`))
     await installPackage(missingPkgs, { dev: true })

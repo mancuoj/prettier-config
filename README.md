@@ -6,7 +6,7 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-No semi, single quotes, trailing comma.
+No semi, single quotes, trailing comma, print width 100.
 
 ## Usage
 

@@ -1,9 +1,8 @@
-/** @type {import('prettier').Options} */
-export default {
+module.exports = {
   semi: false,
   singleQuote: true,
   trailingComma: 'all',
-  printWidth: 120,
+  printWidth: 100,
   overrides: [
     {
       files: [
