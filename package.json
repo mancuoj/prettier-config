@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@antfu/install-pkg": "^0.4.1",
-    "picocolors": "^1.1.0"
+    "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "bumpp": "^9.7.1",
+    "bumpp": "^9.8.1",
     "prettier": "^3.3.3"
   },
   "peerDependencies": {
@@ -35,5 +35,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@9.12.1"
+  "packageManager": "pnpm@9.13.2"
 }
