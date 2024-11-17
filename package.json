@@ -1,6 +1,6 @@
 {
   "name": "@mancuoj/prettier-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "No semi, single quotes, trailing comma",
   "author": "Mancuoj <mancuoj@gmail.com>",
   "license": "MIT",
