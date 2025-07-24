@@ -12,7 +12,10 @@ async function ensurePackages() {
   )
   if (missingPkgs.length > 0) {
     console.log(c.cyan(`Installing required packages: ${missingPkgs.join(', ')}`))
-    await installPackage(missingPkgs, { dev: true })
+    await installPackage(
+      missingPkgs.map((pkg) => `${pkg}@latest`),
+      { dev: true },
+    )
   }
 }
 
@@ -30,8 +33,8 @@ async function main() {
     }
     pkgJson.devDependencies = {
       ...pkgJson.devDependencies,
-      prettier: pkgJson.devDependencies.prettier || 'latest',
-      '@mancuoj/prettier-config': pkgJson.devDependencies['@mancuoj/prettier-config'] || 'latest',
+      prettier: 'latest',
+      '@mancuoj/prettier-config': 'latest',
     }
     pkgJson.prettier = '@mancuoj/prettier-config'
 
