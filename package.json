@@ -1,7 +1,7 @@
 {
   "name": "@mancuoj/prettier-config",
   "type": "module",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Prettier config of @mancuoj",
   "license": "MIT",
   "author": "mancuoj <mancuoj@gmail.com>",
