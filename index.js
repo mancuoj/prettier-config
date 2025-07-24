@@ -1,3 +1,7 @@
+// @ts-check
+import { fileURLToPath } from 'node:url'
+
+/** @type {import('prettier').Config} */
 export default {
   semi: false,
   singleQuote: true,
@@ -8,20 +12,35 @@ export default {
       files: [
         '**/node_modules/**',
         '**/dist/**',
-        '**/output/**',
         '**/coverage/**',
         '**/temp/**',
+        '**/.vitepress/cache/**',
+        '**/.nuxt/**',
+        '**/.vercel/**',
+        '**/.changeset/**',
         '**/.idea/**',
-        '**/.github/**',
         '**/.output/**',
+        '**/.vite-inspect/**',
+
+        // root directory
+        'output/**',
+
+        '**/CHANGELOG*.md',
+        '**/*.min.*',
         '**/LICENSE*',
         '**/__snapshots__',
-        '**/package-lock.json',
+        '**/auto-import?(s).d.ts',
+        '**/components.d.ts',
+        '**/typed-router.d.ts',
         '**/pnpm-lock.yaml',
+        '**/yarn.lock',
+        '**/bun.lockb',
+        '**/bun.lock',
       ],
       options: {
         requirePragma: true,
       },
     },
   ],
+  plugins: [fileURLToPath(import.meta.resolve('@prettier/plugin-oxc'))],
 }
