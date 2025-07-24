@@ -6,8 +6,27 @@
 
 ## Usage
 
+A cli tool to help you set up your project with prettier.
+
 ```sh
-npx @mancuoj/prettier-config
+pnpm dlx @mancuoj/prettier-config
+```
+
+### Manual Install
+
+```sh
+pnpm i -D prettier @mancuoj/prettier-config
+```
+
+And add the following to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "prettier": "@mancuoj/prettier-config"
+}
 ```
 
 ## Features
