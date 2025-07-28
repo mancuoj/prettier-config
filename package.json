@@ -2,17 +2,10 @@
   "name": "@mancuoj/prettier-config",
   "type": "module",
   "version": "0.5.1",
-  "description": "Prettier config of @mancuoj",
-  "license": "MIT",
+  "description": "@mancuoj's Prettier Config",
   "author": "mancuoj <mancuoj@gmail.com>",
-  "homepage": "https://github.com/mancuoj/prettier-config#readme",
-  "bugs": {
-    "url": "https://github.com/mancuoj/prettier-config/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mancuoj/prettier-config.git"
-  },
+  "license": "MIT",
+  "repository": "mancuoj/prettier-config",
   "keywords": [
     "mancuoj",
     "prettier",
@@ -31,7 +24,7 @@
   "bin": "./cli.js",
   "scripts": {
     "format": "prettier -w .",
-    "release": "bumpp && pnpm publish"
+    "release": "bumpp && pnpm publish --access public"
   },
   "dependencies": {
     "@antfu/install-pkg": "^1.1.0",
@@ -42,9 +35,6 @@
   "devDependencies": {
     "bumpp": "^10.2.0",
     "prettier": "^3.6.2"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "prettier": "./index.js"
 }
