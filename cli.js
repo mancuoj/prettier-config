@@ -4,42 +4,48 @@ import fsp from 'node:fs/promises'
 import process from 'node:process'
 import c from 'picocolors'
 import { installPackage } from '@antfu/install-pkg'
-import { isPackageExists, getPackageInfoSync } from 'local-pkg'
+import { isPackageExists, getPackageInfo } from 'local-pkg'
 
-async function ensurePackages() {
-  const missingPkgs = ['prettier', '@mancuoj/prettier-config'].filter(
-    (pkg) => !isPackageExists(pkg),
-  )
+const PRETTIER_CONFIG_NAME = '@mancuoj/prettier-config'
+const REQUIRED_PACKAGES = ['prettier', PRETTIER_CONFIG_NAME]
+
+try {
+  const missingPkgs = REQUIRED_PACKAGES.filter((pkg) => !isPackageExists(pkg))
+
   if (missingPkgs.length > 0) {
-    console.log(c.cyan(`Installing required packages: ${missingPkgs.join(', ')}`))
+    console.log(c.cyan(`🚀 Installing required packages: ${missingPkgs.join(', ')}`))
     await installPackage(missingPkgs, { dev: true })
+    console.log(c.green('✅ Packages installed.'))
   }
-}
 
-async function main() {
+  console.log(c.cyan('📝 Updating package.json...'))
+  const pkgJsonPath = path.join(process.cwd(), 'package.json')
+
+  let pkgJson
   try {
-    const pkgJsonPath = path.join(process.cwd(), 'package.json')
     const pkgContent = await fsp.readFile(pkgJsonPath, 'utf-8')
-    const pkgJson = JSON.parse(pkgContent)
-
-    await ensurePackages()
-
-    pkgJson.scripts = {
-      ...pkgJson.scripts,
-      format: 'prettier -w .',
-    }
-    pkgJson.devDependencies = {
-      ...pkgJson.devDependencies,
-      prettier: getPackageInfoSync('prettier').version,
-      '@mancuoj/prettier-config': getPackageInfoSync('@mancuoj/prettier-config').version,
-    }
-    pkgJson.prettier = '@mancuoj/prettier-config'
-
-    await fsp.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2))
-    console.log(c.green('✔ Prettier setup successfully!'))
-  } catch (err) {
-    console.error(c.red(`✘ ${String(err)}`))
+    pkgJson = JSON.parse(pkgContent)
+  } catch {
+    throw new Error('package.json not found in the current directory.')
   }
-}
 
-main()
+  pkgJson.scripts = pkgJson.scripts || {}
+  pkgJson.devDependencies = pkgJson.devDependencies || {}
+
+  pkgJson.scripts.format = 'prettier -w .'
+  pkgJson.prettier = PRETTIER_CONFIG_NAME
+
+  for (const pkgName of REQUIRED_PACKAGES) {
+    const pkgInfo = await getPackageInfo(pkgName)
+    if (pkgInfo) {
+      pkgJson.devDependencies[pkgName] = `^${pkgInfo.version}`
+    }
+  }
+
+  await fsp.writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2) + '\n')
+
+  console.log(c.green('✅ Prettier setup successfully!'))
+} catch (error) {
+  console.error(c.red(`\n❌ Error: ${error.message}`))
+  process.exit(1)
+}
