@@ -8,22 +8,22 @@ importers:
 
   .:
     dependencies:
-      '@antfu/install-pkg':
-        specifier: ^1.1.0
-        version: 1.1.0
       '@prettier/plugin-oxc':
         specifier: ^0.0.4
         version: 0.0.4
+    devDependencies:
+      '@antfu/install-pkg':
+        specifier: ^1.1.0
+        version: 1.1.0
+      bumpp:
+        specifier: ^10.2.0
+        version: 10.2.0
       local-pkg:
         specifier: ^1.1.1
         version: 1.1.1
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
-    devDependencies:
-      bumpp:
-        specifier: ^10.2.0
-        version: 10.2.0
       prettier:
         specifier: ^3.6.2
         version: 3.6.2

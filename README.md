@@ -9,14 +9,14 @@
 A CLI tool to help you set up your project with prettier.
 
 ```sh
-pnpm dlx @mancuoj/prettier-config
+npx @mancuoj/prettier-config
 ```
 
 <details>
 <summary>Manual Install</summary>
 
 ```sh
-pnpm i -D prettier @mancuoj/prettier-config
+npm i -D prettier @mancuoj/prettier-config
 ```
 
 And add the following to your `package.json`:

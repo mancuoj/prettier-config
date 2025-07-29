@@ -4,7 +4,7 @@ import fsp from 'node:fs/promises'
 import process from 'node:process'
 import c from 'picocolors'
 import { installPackage } from '@antfu/install-pkg'
-import { isPackageExists } from 'local-pkg'
+import { isPackageExists, getPackageInfoSync } from 'local-pkg'
 
 async function ensurePackages() {
   const missingPkgs = ['prettier', '@mancuoj/prettier-config'].filter(
@@ -12,10 +12,7 @@ async function ensurePackages() {
   )
   if (missingPkgs.length > 0) {
     console.log(c.cyan(`Installing required packages: ${missingPkgs.join(', ')}`))
-    await installPackage(
-      missingPkgs.map((pkg) => `${pkg}@latest`),
-      { dev: true },
-    )
+    await installPackage(missingPkgs, { dev: true })
   }
 }
 
@@ -33,8 +30,8 @@ async function main() {
     }
     pkgJson.devDependencies = {
       ...pkgJson.devDependencies,
-      prettier: 'latest',
-      '@mancuoj/prettier-config': 'latest',
+      prettier: getPackageInfoSync('prettier').version,
+      '@mancuoj/prettier-config': getPackageInfoSync('@mancuoj/prettier-config').version,
     }
     pkgJson.prettier = '@mancuoj/prettier-config'
 
