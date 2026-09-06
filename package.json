@@ -33,7 +33,7 @@
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "bumpp": "^10.3.2",
+    "bumpp": "^12.3.0",
     "prettier": "^3.7.4"
   },
   "prettier": "./index.js"
