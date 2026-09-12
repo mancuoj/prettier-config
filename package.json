@@ -28,13 +28,13 @@
   },
   "dependencies": {
     "@antfu/install-pkg": "^1.1.0",
-    "@prettier/plugin-oxc": "^0.1.3",
-    "local-pkg": "^1.1.2",
+    "@prettier/plugin-oxc": "^0.2.2",
+    "local-pkg": "^1.2.1",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "bumpp": "^10.3.2",
-    "prettier": "^3.7.4"
+    "bumpp": "^10.4.1",
+    "prettier": "^3.9.6"
   },
   "prettier": "./index.js"
 }
