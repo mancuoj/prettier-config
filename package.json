@@ -1,11 +1,17 @@
 {
   "name": "@mancuoj/prettier-config",
   "type": "module",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "@mancuoj's Prettier Config",
   "author": "mancuoj <mancuoj@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/mancuoj/prettier-config#readme",
   "repository": "mancuoj/prettier-config",
+  "bugs": "https://github.com/mancuoj/prettier-config/issues",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.6.0"
+  },
   "keywords": [
     "mancuoj",
     "prettier",
@@ -21,20 +27,28 @@
     ".": "./index.js",
     "./package.json": "./package.json"
   },
-  "bin": "./cli.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "prettier-config": "./cli.js"
+  },
   "scripts": {
     "format": "prettier -w .",
-    "release": "bumpp && pnpm publish --access public"
+    "release": "bumpp && pnpm publish"
+  },
+  "peerDependencies": {
+    "prettier": "^3.8.0"
   },
   "dependencies": {
-    "@antfu/install-pkg": "^1.1.0",
-    "@prettier/plugin-oxc": "^0.1.3",
-    "local-pkg": "^1.1.2",
+    "@antfu/install-pkg": "^2.1.0",
+    "@prettier/plugin-oxc": "^0.2.3",
+    "local-pkg": "^1.2.1",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "bumpp": "^10.3.2",
-    "prettier": "^3.7.4"
+    "bumpp": "^12.3.0",
+    "prettier": "^3.9.9"
   },
   "prettier": "./index.js"
 }
