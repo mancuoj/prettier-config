@@ -24,9 +24,15 @@ export default {
         '**/.idea/**',
         '**/.output/**',
         '**/.vite-inspect/**',
+        '**/.svelte-kit/**',
+        '**/.astro/**',
+        '**/.wrangler/**',
+        '**/.nx/**',
+        '**/.parcel-cache/**',
 
         // root directory
         'output/**',
+        '__snapshots__/**',
 
         '**/CHANGELOG*.md',
         '**/*.min.*',

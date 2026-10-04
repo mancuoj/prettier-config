@@ -8,9 +8,13 @@
 
 A CLI tool to help you set up your project with prettier.
 
+> Requires Node.js `>=20.6`.
+
 ```sh
 pnpm dlx @mancuoj/prettier-config
 ```
+
+It automatically installs `prettier` and `@mancuoj/prettier-config` as dev dependencies, then adds the `format` script and the `prettier` field to your `package.json`.
 
 <details>
 <summary>Manual Install</summary>
