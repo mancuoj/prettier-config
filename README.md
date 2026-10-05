@@ -4,26 +4,29 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-## Usage
-
-A CLI tool to help you set up your project with prettier.
+Opinionated [Prettier](https://prettier.io) config — usable as a shareable config or via a one-command CLI setup.
 
 > Requires Node.js `>=20.6`.
 
+## Usage
+
+Set up a project in one command (run it in your project root):
+
 ```sh
 pnpm dlx @mancuoj/prettier-config
+# or: npx @mancuoj/prettier-config
 ```
 
-It automatically installs `prettier` and `@mancuoj/prettier-config` as dev dependencies, then adds the `format` script and the `prettier` field to your `package.json`.
+It installs `prettier` and `@mancuoj/prettier-config` as dev dependencies, then adds the `format` script and the `prettier` field to your `package.json`. Run `pnpm format` to format your project.
 
 <details>
-<summary>Manual Install</summary>
+<summary>Manual install</summary>
 
 ```sh
 pnpm i -D prettier @mancuoj/prettier-config
 ```
 
-And add the following to your `package.json`:
+Add the following to your `package.json`:
 
 ```json
 {
@@ -38,12 +41,9 @@ And add the following to your `package.json`:
 
 ## Features
 
-- 2 spaces
-- No semicolons
-- Single quotes
-- Trailing commas
-- 100 print width
-- Ignore common files
+- 2 spaces, no semicolons, single quotes
+- Trailing commas, 100 print width
+- Ignores common build output and lockfiles (`dist`, `.next`, `pnpm-lock.yaml`, …)
 
 ## License
 
