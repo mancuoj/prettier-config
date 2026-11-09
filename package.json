@@ -43,7 +43,7 @@
   "dependencies": {
     "@antfu/install-pkg": "^2.1.0",
     "@prettier/plugin-oxc": "^0.2.3",
-    "local-pkg": "^1.2.1",
+    "local-pkg": "^2.0.0",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
