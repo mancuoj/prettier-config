@@ -212,8 +212,8 @@ packages:
   confbox@0.2.2:
     resolution: {integrity: sha512-1NB+BKqhtNipMsov4xI/NnhCKp9XG9NamYp5PVm9klAT0fsrNPjaFICsCFhNhwZJKNh7zB/3q8qXz0E9oaMNtQ==}
 
-  defu@6.1.4:
-    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+  defu@6.1.7:
+    resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
 
   exsolve@1.0.8:
     resolution: {integrity: sha512-LmDxfWXwcTArk8fUEnOfSZpHOJ6zOMUJKOtFLFqJLoKJetuQG874Uc7/Kki7zFLzYybmZhp1M7+98pfMqeX8yA==}
@@ -435,7 +435,7 @@ snapshots:
 
   confbox@0.2.2: {}
 
-  defu@6.1.4: {}
+  defu@6.1.7: {}
 
   exsolve@1.0.8: {}
 
@@ -531,7 +531,7 @@ snapshots:
   unconfig@7.5.0:
     dependencies:
       '@quansync/fs': 1.1.0
-      defu: 6.1.4
+      defu: 6.1.7
       jiti: 2.6.1
       quansync: 1.0.0
       unconfig-core: 7.5.0
